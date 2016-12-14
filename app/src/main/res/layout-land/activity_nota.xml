@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="nota" type="com.izv.dam.newquip.pojo.Nota"/>
+    </data>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vistas.notas.VistaNota"
+    android:orientation="vertical"
+    android:id="@+id/linearLayout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/etTitulo"
+                        android:hint="@string/titulo"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:text="@={nota.titulo}"
+                        android:gravity="center_vertical|center_horizontal" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:layout_width="300dp"
+                        android:layout_height="match_parent"
+                        android:hint="@string/nota"
+                        android:id="@+id/etNota"
+                        android:inputType="textMultiLine"
+                        android:imeOptions="actionDone"
+                        android:text="@={nota.descripcion}"
+                        android:gravity="center_vertical|center_horizontal" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:srcCompat="@android:color/transparent"
+                android:id="@+id/imageView"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+</layout>
